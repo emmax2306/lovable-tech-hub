@@ -1,36 +1,31 @@
-import { Cog, Users, Headset, HardDrive, Code2, Linkedin, Mail } from "lucide-react";
+import { Cog, Users, Headset, HardDrive, Code2 } from "lucide-react";
 
 const teamMembers = [
   {
-    name: "Alexandre Martin",
     role: "DevOps Engineer",
     description: "Expert en automatisation et déploiement continu. Optimise vos pipelines CI/CD.",
     icon: Cog,
     color: "bg-accent",
   },
   {
-    name: "Sophie Dubois",
     role: "Chef de Projet",
     description: "Pilote vos projets IT avec rigueur et méthodologie agile pour des livraisons réussies.",
     icon: Users,
     color: "bg-primary",
   },
   {
-    name: "Thomas Bernard",
     role: "Responsable Support",
     description: "Coordonne l'équipe support pour une assistance rapide et efficace à vos utilisateurs.",
     icon: Headset,
     color: "bg-secondary",
   },
   {
-    name: "Marie Leroy",
     role: "Responsable Infrastructure",
     description: "Architecte de vos systèmes réseau et serveurs pour une performance optimale.",
     icon: HardDrive,
     color: "bg-accent",
   },
   {
-    name: "Lucas Moreau",
     role: "Lead Développeur",
     description: "Développe des solutions logicielles sur-mesure adaptées à vos besoins métiers.",
     icon: Code2,
@@ -57,7 +52,7 @@ const Team = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
             <div
-              key={member.name}
+              key={member.role}
               className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-accent/30 transition-all duration-300 shadow-soft hover:shadow-card animate-fade-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -71,19 +66,8 @@ const Team = () => {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-semibold text-foreground mb-1">{member.name}</h3>
-                <p className="text-accent font-medium mb-4">{member.role}</p>
-                <p className="text-muted-foreground mb-6">{member.description}</p>
-
-                {/* Social Links */}
-                <div className="flex gap-3">
-                  <a href="#" className="p-2 rounded-lg bg-muted hover:bg-accent/20 transition-colors">
-                    <Linkedin className="w-5 h-5 text-muted-foreground hover:text-accent" />
-                  </a>
-                  <a href="#" className="p-2 rounded-lg bg-muted hover:bg-accent/20 transition-colors">
-                    <Mail className="w-5 h-5 text-muted-foreground hover:text-accent" />
-                  </a>
-                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-2">{member.role}</h3>
+                <p className="text-muted-foreground">{member.description}</p>
               </div>
             </div>
           ))}
