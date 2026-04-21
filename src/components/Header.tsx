@@ -8,7 +8,6 @@ const Header = () => {
 
   const navLinks = [
     { label: "Accueil", href: "#accueil" },
-    { label: "Services", href: "#services" },
     { label: "Équipe", href: "#equipe" },
     { label: "Contact", href: "#contact" },
   ];
@@ -40,7 +39,7 @@ const Header = () => {
               to="/nos-services"
               className="text-accent hover:text-accent/80 transition-colors font-medium"
             >
-              Nos services →
+              Services →
             </Link>
           </nav>
 
@@ -79,7 +78,7 @@ const Header = () => {
                 className="text-accent hover:text-accent/80 transition-colors font-medium py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Nos services →
+                Services →
               </Link>
               <div className="flex flex-col gap-2 pt-4">
                 <Button variant="ghost" className="justify-start">Connexion</Button>

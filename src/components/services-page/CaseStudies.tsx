@@ -9,7 +9,7 @@ const cases = [
     results: [
       { kpi: "0", label: "Panne critique en 18 mois" },
       { kpi: "−65%", label: "De tickets support" },
-      { kpi: "+40%", label: "De productivité utilisateurs" },
+      { kpi: "+40%", label: "De productivité" },
     ],
   },
   {
@@ -34,7 +34,7 @@ const cases = [
       "Réseau SD-WAN multisite, serveur centralisé haute dispo, helpdesk dédié et techniciens itinérants.",
     results: [
       { kpi: "×8", label: "Vitesse de partage" },
-      { kpi: "<15min", label: "Temps moyen de réponse" },
+      { kpi: "<15min", label: "Temps de réponse" },
       { kpi: "99,9%", label: "Disponibilité réseau" },
     ],
   },
@@ -42,49 +42,49 @@ const cases = [
 
 const CaseStudies = () => {
   return (
-    <section id="cas-clients" className="py-32 border-b border-white/5">
-      <div className="container mx-auto px-6">
-        <div className="max-w-3xl mb-20">
-          <div className="text-xs uppercase tracking-[0.2em] text-amber-400 mb-6">
-            ↳ Cas clients
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight">
-            Des résultats,
-            <br />
-            <span className="italic font-serif font-normal text-neutral-400">
-              pas des promesses.
-            </span>
+    <section id="cas-clients" className="py-24 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-accent font-semibold text-sm uppercase tracking-wider">
+            Cas clients
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+            Des résultats, pas des promesses
           </h2>
+          <p className="text-muted-foreground text-lg">
+            Trois exemples concrets de transformations menées avec nos clients.
+          </p>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-8 max-w-6xl mx-auto">
           {cases.map((c, idx) => (
             <article
               key={c.sector}
-              className="grid lg:grid-cols-12 gap-8 p-10 border border-white/10 rounded-2xl hover:border-amber-500/30 transition-colors bg-gradient-to-br from-white/[0.02] to-transparent"
+              className="grid lg:grid-cols-12 gap-8 p-8 md:p-10 rounded-2xl bg-card border border-border hover:border-accent/40 transition-all shadow-soft hover:shadow-card animate-fade-up"
+              style={{ animationDelay: `${idx * 0.1}s` }}
             >
               <div className="lg:col-span-3">
-                <div className="text-xs font-mono text-neutral-600 mb-3">
+                <div className="text-xs font-mono text-muted-foreground mb-2">
                   CAS {String(idx + 1).padStart(2, "0")}
                 </div>
-                <div className="text-amber-400 font-bold text-lg mb-1">
+                <div className="text-primary font-bold text-lg mb-1">
                   {c.sector}
                 </div>
-                <div className="text-sm text-neutral-500">{c.size}</div>
+                <div className="text-sm text-muted-foreground">{c.size}</div>
               </div>
 
               <div className="lg:col-span-5 space-y-5">
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-neutral-500 mb-2">
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground mb-2 font-semibold">
                     Le défi
                   </div>
-                  <p className="text-neutral-300">{c.challenge}</p>
+                  <p className="text-foreground/80">{c.challenge}</p>
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-neutral-500 mb-2">
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground mb-2 font-semibold">
                     Notre intervention
                   </div>
-                  <p className="text-neutral-300">{c.solution}</p>
+                  <p className="text-foreground/80">{c.solution}</p>
                 </div>
               </div>
 
@@ -92,12 +92,12 @@ const CaseStudies = () => {
                 {c.results.map((r) => (
                   <div
                     key={r.label}
-                    className="border-l-2 border-amber-500 pl-4"
+                    className="border-l-4 border-accent pl-4"
                   >
-                    <div className="text-2xl lg:text-3xl font-black text-neutral-100">
+                    <div className="text-2xl lg:text-3xl font-bold text-foreground">
                       {r.kpi}
                     </div>
-                    <div className="text-xs text-neutral-500 mt-1">
+                    <div className="text-xs text-muted-foreground mt-1">
                       {r.label}
                     </div>
                   </div>

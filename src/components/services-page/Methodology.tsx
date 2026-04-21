@@ -33,54 +33,47 @@ const steps = [
 
 const Methodology = () => {
   return (
-    <section id="methode" className="py-32 border-b border-white/5">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-12 gap-16 mb-20">
-          <div className="lg:col-span-5">
-            <div className="text-xs uppercase tracking-[0.2em] text-amber-400 mb-6">
-              ↳ Notre méthode
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight">
-              Cinq étapes pour
-              <br />
-              <span className="italic font-serif font-normal text-neutral-400">
-                transformer votre IT.
-              </span>
-            </h2>
-          </div>
-          <div className="lg:col-span-6 lg:col-start-7 flex items-end">
-            <p className="text-neutral-400 text-lg leading-relaxed">
-              Une approche éprouvée qui place la compréhension de votre métier
-              avant la technique. Chaque étape est jalonnée, documentée et
-              validée avec vous.
-            </p>
-          </div>
+    <section id="methode" className="py-24 bg-muted/40">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-accent font-semibold text-sm uppercase tracking-wider">
+            Notre méthode
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+            Cinq étapes pour transformer votre IT
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Une approche éprouvée qui place la compréhension de votre métier
+            avant la technique. Chaque étape est jalonnée, documentée et
+            validée avec vous.
+          </p>
         </div>
 
-        <div className="space-y-px bg-white/5">
-          {steps.map((step) => (
+        <div className="max-w-5xl mx-auto space-y-4">
+          {steps.map((step, idx) => (
             <div
               key={step.n}
-              className="group bg-[#0c0d10] hover:bg-white/[0.02] transition-colors"
+              className="group bg-card rounded-2xl p-8 border border-border hover:border-accent/40 transition-all shadow-soft hover:shadow-card animate-fade-up"
+              style={{ animationDelay: `${idx * 0.08}s` }}
             >
-              <div className="container mx-auto grid lg:grid-cols-12 gap-8 py-10 px-2 lg:px-0">
-                <div className="lg:col-span-2">
-                  <div className="text-5xl font-black text-amber-400/80 group-hover:text-amber-400 transition-colors">
+              <div className="grid md:grid-cols-12 gap-6 items-start">
+                <div className="md:col-span-2">
+                  <div className="text-5xl font-bold text-primary/20 group-hover:text-accent transition-colors">
                     {step.n}
                   </div>
                 </div>
-                <div className="lg:col-span-4">
-                  <h3 className="text-2xl font-bold text-neutral-100">
+                <div className="md:col-span-4">
+                  <h3 className="text-xl font-semibold text-foreground">
                     {step.title}
                   </h3>
                 </div>
-                <div className="lg:col-span-4">
-                  <p className="text-neutral-400 leading-relaxed">
+                <div className="md:col-span-4">
+                  <p className="text-muted-foreground leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
-                <div className="lg:col-span-2 lg:text-right">
-                  <span className="inline-block text-xs uppercase tracking-wider text-neutral-500 border border-white/10 px-3 py-1.5 rounded-full">
+                <div className="md:col-span-2 md:text-right">
+                  <span className="inline-block text-xs uppercase tracking-wider text-muted-foreground bg-muted px-3 py-1.5 rounded-full font-medium">
                     {step.duration}
                   </span>
                 </div>

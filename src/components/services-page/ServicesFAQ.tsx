@@ -23,7 +23,7 @@ const faqs = [
     a: "Notre helpdesk est ouvert 6j/7 de 7h à 20h. Pour les contrats Premium, une astreinte 24/7 est incluse avec engagement d'intervention sous 1 heure.",
   },
   {
-    q: "Travaillez-vous avec quelles marques de matériel ?",
+    q: "Avec quelles marques de matériel travaillez-vous ?",
     a: "Nous sommes partenaires Dell, HPE, Lenovo, Cisco, Fortinet, Microsoft et Veeam. Nous restons indépendants : la recommandation matériel suit toujours votre besoin, pas une commission.",
   },
   {
@@ -34,44 +34,38 @@ const faqs = [
 
 const ServicesFAQ = () => {
   return (
-    <section id="faq" className="py-32 border-b border-white/5">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-amber-400 mb-6">
-              ↳ FAQ
-            </div>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
-              Vos questions,
-              <br />
-              <span className="italic font-serif font-normal text-neutral-400">
-                nos réponses.
-              </span>
-            </h2>
-            <p className="text-neutral-400">
-              Une question qui n'apparaît pas ici ? Écrivez-nous, on répond
-              sous 24h ouvrées.
-            </p>
-          </div>
+    <section id="faq" className="py-24 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-accent font-semibold text-sm uppercase tracking-wider">
+            FAQ
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+            Vos questions, nos réponses
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Une question qui n'apparaît pas ici ? Écrivez-nous, on répond sous
+            24h ouvrées.
+          </p>
+        </div>
 
-          <div className="lg:col-span-8">
-            <Accordion type="single" collapsible className="space-y-3">
-              {faqs.map((f, i) => (
-                <AccordionItem
-                  key={i}
-                  value={`item-${i}`}
-                  className="border border-white/10 rounded-xl px-6 bg-white/[0.02] data-[state=open]:bg-white/[0.04] data-[state=open]:border-amber-500/30"
-                >
-                  <AccordionTrigger className="text-left text-neutral-100 hover:no-underline hover:text-amber-400 py-5">
-                    {f.q}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-neutral-400 leading-relaxed pb-5">
-                    {f.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-3">
+            {faqs.map((f, i) => (
+              <AccordionItem
+                key={i}
+                value={`item-${i}`}
+                className="border border-border rounded-xl px-6 bg-card data-[state=open]:border-accent/40 shadow-soft"
+              >
+                <AccordionTrigger className="text-left text-foreground hover:no-underline hover:text-accent py-5 font-semibold">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>
