@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,6 +36,12 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
+            <Link
+              to="/nos-services"
+              className="text-accent hover:text-accent/80 transition-colors font-medium"
+            >
+              Nos services →
+            </Link>
           </nav>
 
           {/* Desktop CTA */}
@@ -67,6 +74,13 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
+              <Link
+                to="/nos-services"
+                className="text-accent hover:text-accent/80 transition-colors font-medium py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Nos services →
+              </Link>
               <div className="flex flex-col gap-2 pt-4">
                 <Button variant="ghost" className="justify-start">Connexion</Button>
                 <Button className="justify-start">Demander un devis</Button>
