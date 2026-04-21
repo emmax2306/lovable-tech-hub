@@ -29,37 +29,31 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section
-      id="temoignages"
-      className="py-32 border-b border-white/5 bg-[#0a0b0e]"
-    >
-      <div className="container mx-auto px-6">
-        <div className="max-w-3xl mb-20">
-          <div className="text-xs uppercase tracking-[0.2em] text-amber-400 mb-6">
-            ↳ Témoignages
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight">
-            Ce que disent
-            <br />
-            <span className="italic font-serif font-normal text-neutral-400">
-              celles et ceux qu'on accompagne.
-            </span>
+    <section id="temoignages" className="py-24 bg-muted/40">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-accent font-semibold text-sm uppercase tracking-wider">
+            Témoignages
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+            Ce que disent nos clients
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {testimonials.map((t, i) => (
             <figure
               key={i}
-              className="p-10 border border-white/10 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] transition-colors relative"
+              className="p-8 rounded-2xl bg-card border border-border hover:border-accent/40 transition-all shadow-soft hover:shadow-card animate-fade-up"
+              style={{ animationDelay: `${i * 0.08}s` }}
             >
-              <Quote className="w-8 h-8 text-amber-400/40 mb-6" />
-              <blockquote className="text-lg text-neutral-200 leading-relaxed mb-8">
+              <Quote className="w-8 h-8 text-accent/50 mb-4" />
+              <blockquote className="text-foreground/85 leading-relaxed mb-6">
                 « {t.quote} »
               </blockquote>
-              <figcaption className="pt-6 border-t border-white/10">
-                <div className="text-neutral-100 font-semibold">{t.author}</div>
-                <div className="text-sm text-neutral-500 mt-0.5">
+              <figcaption className="pt-5 border-t border-border">
+                <div className="text-foreground font-semibold">{t.author}</div>
+                <div className="text-sm text-muted-foreground mt-0.5">
                   {t.company}
                 </div>
               </figcaption>
