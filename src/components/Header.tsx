@@ -46,7 +46,9 @@ const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
             <Button variant="ghost">Connexion</Button>
-            <Button>Demander un devis</Button>
+            <Button asChild>
+              <Link to="/devis">Demander un devis</Link>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -82,7 +84,11 @@ const Header = () => {
               </Link>
               <div className="flex flex-col gap-2 pt-4">
                 <Button variant="ghost" className="justify-start">Connexion</Button>
-                <Button className="justify-start">Demander un devis</Button>
+                <Button asChild className="justify-start">
+                  <Link to="/devis" onClick={() => setIsMenuOpen(false)}>
+                    Demander un devis
+                  </Link>
+                </Button>
               </div>
             </nav>
           </div>
