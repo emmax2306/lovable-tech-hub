@@ -7,6 +7,7 @@ import CaseStudies from "@/components/services-page/CaseStudies";
 import Testimonials from "@/components/services-page/Testimonials";
 import ServicesFAQ from "@/components/services-page/ServicesFAQ";
 import ServicesCTA from "@/components/services-page/ServicesCTA";
+import Contact from "@/components/Contact";
 
 const NosServices = () => {
   return (
@@ -19,6 +20,7 @@ const NosServices = () => {
         <CaseStudies />
         <Testimonials />
         <ServicesFAQ />
+        <Contact />
         <ServicesCTA />
       </main>
       <Footer />
